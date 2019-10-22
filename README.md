@@ -1,2 +1,3 @@
-# A_Star_Search_Algorithm
-Implementación de algortimo de búsqueda A*
+# Implementación del Algoritmo de Búsqueda A * (A Estrella)
+
+Implementación en python
