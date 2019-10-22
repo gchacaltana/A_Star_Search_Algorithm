@@ -1,20 +1,35 @@
 {
 	"I": {
-		"A": 1,
-		"B": 4
+		"children_nodes": {
+			"A": 1,
+			"B": 4
+		},
+		"estimated_cost": 7
 	},
 	"A": {
-		"B": 2,
-		"C": 5,
-		"F": 12
+		"children_nodes": {
+			"B": 2,
+			"C": 5,
+			"F": 12
+		},
+		"estimated_cost": 6
 	},
 	"B": {
-		"C": 2
+		"children_nodes": {
+			"C": 2
+		},
+		"estimated_cost": 2
 	},
 	"C": {
-		"F": 3
+		"children_nodes": {
+			"F": 3
+		},
+		"estimated_cost": 1
 	},
 	"F": {
-		"F": 0
+		"children_nodes": {
+			"F": 0
+		},
+		"estimated_cost": 0
 	}
 }
