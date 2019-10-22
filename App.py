@@ -7,6 +7,7 @@ __email__ = "gchacaltanab@gmail.com"
 import json
 import sys
 from Node import Node
+from AStarAlgorithm import AStarAlgorithm
 
 
 class App(object):
@@ -23,6 +24,7 @@ class App(object):
         self.openfile()
         self.createNodes()
         self.showNodes()
+        self.runAStarAlgorithm()
 
     def openfile(self):
         print("\n1. Abriendo fichero.")
@@ -66,6 +68,11 @@ class App(object):
             print("Nodos Hijos y costo real\n")
             print(n.getRealCostChildren())
             print("\n-----------------------\n")
+
+    def runAStarAlgorithm(self):
+        print("4. Ejecutando Algortimo A Estrella")
+        astar = AStarAlgorithm(self.parentNode[1], self.nodeSearched)
+        astar.run()
 
 if __name__ == "__main__":
     try:
