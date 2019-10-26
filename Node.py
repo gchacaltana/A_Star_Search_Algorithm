@@ -8,11 +8,11 @@ __email__ = "gchacaltanab@gmail.com"
 
 class Node(object):
 
-    def __init__(self, name):
+    def __init__(self, name, estimatedCost):
         self.childNodes = []
         self.childNodesRealCost = {}
         self.name = name
-        self.estimatedCost = 0
+        self.estimatedCost = estimatedCost
 
     def addChild(self,childNode, realCost):
         # Agrega nodo hijo
