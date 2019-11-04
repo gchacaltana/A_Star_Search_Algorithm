@@ -18,4 +18,5 @@ construcción de la Municipalidad de Lima.
 ![Ruta óptima](http://www.solocodigoweb.com/wp-content/uploads/2019/11/recorrido_optimo_a_estrella_accidente_lima.jpg)
 
 **Solución:** I-A-B-C-F
+
 **Costo:** 8
