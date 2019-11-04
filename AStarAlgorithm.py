@@ -37,23 +37,22 @@ class AStarAlgorithm(object):
 
     def searchNode(self):
         self.evaluateMininiumRoute()
-        for route in self.iterationList[self.iteration-1]:
-            if (route.name == self.routeMin):
-                childrens = route.node.getChildrenNodes()
+        for r in self.iterationList[self.iteration-1]:
+            if (r.name == self.routeMin):
+                childrens = r.node.getChildrenNodes()
                 self.validateResultFound(
-                    route.node.name, self.nodeEnd.name, childrens)
-                for children in childrens:
-                    nameRoute = self.routeMin + "-" + children.name
-                    print(nameRoute, route.realCost,route.node.childNodesRealCost[children.name])
-                    realCost = route.realCost + route.node.childNodesRealCost[children.name]
-                    print(realCost)
-                    value = realCost + children.estimatedCost
+                    r.node.name, self.nodeEnd.name, childrens)
+                for child in childrens:
+                    nameRoute = self.routeMin + "-" + child.name
+                    realCost = r.realCost + \
+                        r.node.childNodesRealCost[child.name]
+                    value = realCost + child.estimatedCost
                     route = Route(nameRoute, value, realCost,
-                                  self.iteration, children)
+                                  self.iteration, child)
                     self.routeslist.append(route)
             else:
-                self.routeslist.append(route)
-            self.iterationList[self.iteration] = self.routeslist
+                self.routeslist.append(r)
+        self.iterationList[self.iteration] = self.routeslist
 
     def validateResultFound(self, routeName, nodeSearch, childrens):
         if (routeName == nodeSearch and len(childrens) == 0):
@@ -68,10 +67,7 @@ class AStarAlgorithm(object):
         total = len(self.iterationList[self.iteration])
         for r in self.iterationList[self.iteration]:
             counter += 1
-            if (counter == total):
-                print("%s: %s" % (r.name, r.value), end='')
-            else:
-                print("%s: %s, " % (r.name, r.value), end='')
+            print("%s: %s" % (r.name, r.value), end='') if (counter == total) else print("%s: %s, " % (r.name, r.value), end='')
         print("")
 
     def evaluateMininiumRoute(self):
@@ -79,13 +75,10 @@ class AStarAlgorithm(object):
         for route in self.iterationList[self.iteration-1]:
             counter += 1
             if (counter == 1):
-                self.valueMin = route.value
-                self.routeMin = route.name
+                self.valueMin = route.value; self.routeMin = route.name
             else:
                 if (route.value < self.valueMin):
-                    self.valueMin = route.value
-                    self.routeMin = route.name
-        CYELLOW = '\33[33m'
-        CEND = '\033[0m'
+                    self.valueMin = route.value; self.routeMin = route.name
+        CYELLOW = '\33[33m'; CEND = '\033[0m'
         print(CYELLOW + "Recorrido Minimo : %s : %s\n" %
               (self.routeMin, self.valueMin) + CEND)

@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-OpenRoute Class
+Route Class
 """
 import sys
 
