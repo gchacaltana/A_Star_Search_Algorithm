@@ -4,7 +4,7 @@
 Node Class
 """
 __author__ = "Gonzalo Chacaltana Buleje"
-__email__ = "gchacaltanab@gmail.com"
+__email__ = "gchacaltanab@outlook.com"
 
 class Node(object):
 
@@ -15,18 +15,47 @@ class Node(object):
         self.estimatedCost = estimatedCost
 
     def addChild(self,childNode, realCost):
-        # Agrega nodo hijo
+        """
+        Agrega nodo hijo a nodo padre.
+
+        Parameters
+        ----------
+        childNode : Node Object, obligatorio
+            Nodo hijo
+
+        realCost : float, obligatorio
+            Esfuerzo real del nodo hijo.
+        """
+
         self.childNodes.append(childNode)
         self.childNodesRealCost[childNode.name] = realCost
 
     def getChildrenNodes(self):
-        # Devuelve los nodos hijos del nodo padre
+        """
+        Devuelve los nodos hijos del nodo padre.
+        """
         return self.childNodes
     
-    def getRealCostChildren(self):
-        # Devuelve el esfuerzo real por cada nodo hijos del nodo padre
+    def getRealCostChildren(self) -> float:
+        """
+        Devuelve el esfuerzo real por cada nodo hijo del nodo padre.
+
+        Returns
+        -------
+        float
+            esfuerzo real del nodo hijo
+
+        """
         return self.childNodesRealCost
     
     def assignEstimatedCost(self, value):
-        # Asignar costo estimado a nodo.
+        """
+        Asignar esfuerzo estimado a nodo.
+
+        Parameters
+        ----------
+        value : float, obligatorio
+            esfuerzo estimado
+
+        """
         self.estimatedCost = value

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # App Script
 __author__ = "Gonzalo Chacaltana Buleje"
-__email__ = "gchacaltanab@gmail.com"
+__email__ = "gchacaltanab@outlook.com"
 
 import sys
 from Node import Node
