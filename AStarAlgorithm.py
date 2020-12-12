@@ -6,7 +6,7 @@ AStarAlgorithm Class
 import sys
 
 __author__ = "Gonzalo Chacaltana Buleje"
-__email__ = "gchacaltanab@gmail.com"
+__email__ = "gchacaltanab@outlook.com"
 
 from Route import Route
 
@@ -14,6 +14,14 @@ from Route import Route
 class AStarAlgorithm(object):
 
     def __init__(self, nodeStart, nodeEnd):
+        """
+        Parameters
+        ----------
+        nodeStart : Node Object, obligatorio
+            Nodo de inicio de la ruta.
+        nodeEnd : Node Object, obligatorio
+            Nodo final de la ruta.
+        """
         self.iteration = 0
         self.iterationList = {}
         self.routeList = []
@@ -23,6 +31,7 @@ class AStarAlgorithm(object):
         self.routeMin = False
 
     def run(self):
+        """ main method """
         while True:
             self.iteration += 1
             self.routeslist = []
