@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-# App Script
+# App Main
 __author__ = "Gonzalo Chacaltana Buleje"
 __email__ = "gchacaltanab@outlook.com"
 
